@@ -1,6 +1,6 @@
 
 class TaskModel {
-    constuctor(task) {
+    constructor(task) {
         this.task = task;
     }
 }

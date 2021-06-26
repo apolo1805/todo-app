@@ -12,8 +12,6 @@ function Input({placeholder, tooltip, handleAdd}) {
         if (e.code === "Enter") {
             handleAdd(input);
             setInput("");
-         } else {
-            setInput(e.target.value);
          }
     }
 
@@ -23,6 +21,7 @@ function Input({placeholder, tooltip, handleAdd}) {
                 <FormControl
                     placeholder={placeholder}
                     value={input}
+                    onChange={(e) => setInput(e.target.value)}
                     onKeyDown={(e) => handleKeyPress(e)}
                 />
                 <InputGroup.Text>{tooltip}</InputGroup.Text>

@@ -10,7 +10,7 @@ function App() {
   const [tasks, setTasks] = useState([]);
 
   function addNewTask(task) {
-    setTasks(new TaskModel(task));
+    setTasks(tasks.concat(new TaskModel(task)));
   }
 
   return (
