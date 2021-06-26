@@ -12,7 +12,7 @@ function App() {
       </header>
 
       <main>
-        <Input />
+        <Input placeholder="Type a new task..." tooltip="Press Enter to add to the list"/>
         <Dashboard />
       </main>
     </div>

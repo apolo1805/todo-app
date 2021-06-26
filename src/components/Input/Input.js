@@ -1,11 +1,18 @@
 
 import React from 'react';
+import { FormControl, InputGroup } from 'react-bootstrap';
 import './Input.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-function Input(props) {
+function Input({placeholder, tooltip}) {
     return (
         <div className="c-input">
-            Input field
+             <InputGroup className="mb-3">
+                <FormControl
+                    placeholder={placeholder}
+                />
+                <InputGroup.Text>{tooltip}</InputGroup.Text>
+            </InputGroup>
         </div>
     );
 }
