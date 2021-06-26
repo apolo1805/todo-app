@@ -2,8 +2,17 @@
 import './App.css';
 import Input from './components/Input/Input';
 import Dashboard from './components/Dashboard/Dashboard';
+import { useState } from 'react';
+import TaskModel from './model/TaskModel';
 
 function App() {
+
+  const [tasks, setTasks] = useState([]);
+
+  function addNewTask(task) {
+    setTasks(new TaskModel(task));
+  }
+
   return (
     <div className="App">
       <header>
@@ -12,8 +21,8 @@ function App() {
       </header>
 
       <main>
-        <Input placeholder="Type a new task..." tooltip="Press Enter to add to the list"/>
-        <Dashboard />
+        <Input placeholder="Type a new task..." tooltip="Press Enter to add to the list" handleAdd={addNewTask}/>
+        <Dashboard taskList={tasks}/>
       </main>
     </div>
   );

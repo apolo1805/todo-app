@@ -2,10 +2,10 @@
 import React from 'react';
 import './Dashboard.css';
 
-function Dashboard(props) {
+function Dashboard({taskList}) {
     return (
         <div className="c-dashboard">
-            Dashboard view
+            {taskList.length === 0 ? "No tasks to show" : ""}
         </div>
     );
 }
