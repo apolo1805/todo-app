@@ -9,8 +9,8 @@ function Task({content}) {
     return (
         <div className="c-task">
             <InputGroup className="mb-3">
-                <InputGroup.Checkbox checked={isCompleted} onChange={() => setCompleted(!isCompleted)} aria-label="Checkbox for following text input" />
-                {content}
+                <InputGroup.Checkbox checked={isCompleted} onChange={() => setCompleted(!isCompleted)}/>
+                <span className={isCompleted ? "strikeout" : "regular"}>{content}</span>
             </InputGroup>
         </div>
     );

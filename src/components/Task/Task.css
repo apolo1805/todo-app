@@ -1,5 +1,13 @@
 
 .c-task {
     margin: 0 auto;
-    width: 150px;
+    padding: 0 200px;
+}
+
+.regular {
+    text-decoration: none;
+}
+
+.strikeout {
+    text-decoration: line-through;
 }
