@@ -1,10 +1,17 @@
 
-import React from 'react';
+import React, { useState } from 'react';
+import { FormControl, InputGroup } from 'react-bootstrap';
+import './Task.css';
 
 function Task({content}) {
+    const [isCompleted, setCompleted] = useState(false);
+
     return (
         <div className="c-task">
-            {content}
+            <InputGroup className="mb-3">
+                <InputGroup.Checkbox checked={isCompleted} onChange={() => setCompleted(!isCompleted)} aria-label="Checkbox for following text input" />
+                {content}
+            </InputGroup>
         </div>
     );
 }
