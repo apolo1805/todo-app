@@ -13,6 +13,11 @@ function App() {
     setTasks(tasks.concat(new TaskModel(task)));
   }
 
+  function handleChange(isCompleted, index) {
+    tasks[index].isCompleted = isCompleted;
+    setTasks(tasks.concat([]));
+  }
+
   return (
     <div className="App">
       <header>
@@ -22,7 +27,7 @@ function App() {
 
       <main>
         <Input placeholder="Type a new task..." tooltip="Press Enter to add to the list" handleAdd={addNewTask}/>
-        <Dashboard taskList={tasks}/>
+        <Dashboard taskList={tasks} handleChange={handleChange}/>
       </main>
     </div>
   );
